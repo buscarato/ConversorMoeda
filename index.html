@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <title> MS1 - Conversor de Moedas</title>
+</head>
+
+<body>
+    <div id="cabecalho">
+        <h1> MS1 - Conversor De Moedas</h1>
+    </div>
+
+    <div id="caixa-principal">
+        <p class="Paragrafo">Converter <b>de:</b></p>
+        <select class="select">
+            <option> R$ Real Brasileiro</option>
+        </select>
+
+        <p class="Paragrafo">Converter <b>para:</b></p>
+        <select class="select" id="selectMoedas">
+            <option>U$ Dolar Americano</option>
+            <option>€ Euro</option>
+        </select>
+
+        <p class="Paragrafo"><b>Valor</b></p>
+        <input id="input" placeholder="R$ 1,00" type="number">
+
+        <button id="botao">Converter</button>
+
+        <div id="caixa_interna">
+            <div class="caixa-interna">
+                <img src="./img/Brasil.png">
+                <p class="Paragrafo">Real</p>
+                <p id="ValorDigitado" class="Paragrafo_negrito"> R$ 1.000,00</p>
+            </div>
+
+            <img class="seta" id="seta" src="./img/Seta1.png">
+
+            <div class="caixa-interna">
+                <img id='bandeiras' src="./img/EUA.png">
+                <p id="textoResultado" class="Paragrafo">Dolar Americano</p>
+                <p class="Paragrafo_negrito" id="ValorConvertido">$ 5.000,00</p>
+            </div>
+        </div>
+
+        <div class="atualizado">
+            <p id="horaConsulta">Atualizado: Sem info</p>
+            <p id="ValorUnitario">Valor Unitário: Sem info</p>
+        </div>
+    </div>
+
+</body>
+
+<style>
+    /* * vai ser colocado em todo o site, ele vai tirar espaço entre linhas, vai tirar magem e box-sizing não ficou muito 
+    claro exatamente o que ele faz */
+    * {
+        font-family: 'Roboto', sans-serif;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    /*se vc setou id então vc usa o ponto (.) no incio para chamar no css
+    se não vc usar o (#) para class, a vantagem da classa q vc pode usar em mais de um lugar as mesma configurações 
+    */
+    .Paragrafo {
+        margin-bottom: 6px;
+        color: #777777;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+
+    }
+
+
+    #cabecalho {
+        color: white;
+        width: 375px;
+        height: 66px;
+        background: #9657A5;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 12px;
+
+    }
+
+    h1 {
+        color: #F4F4F4;
+        font-size: 24px;
+        text-align: center;
+        padding-top: 20px
+    }
+
+    body {
+        background: #2C2C2C
+    }
+
+
+    #caixa-principal {
+        background: #E5E5E5;
+        width: 375px;
+        padding: 24px;
+        margin-left: auto;
+        margin-right: auto;
+
+
+    }
+
+    .select {
+        background: white;
+        border: 1px solid #BBBBBB;
+        border-radius: 4px;
+        height: 48px;
+        width: 327px;
+        margin-bottom: 23px;
+        appearance: none;
+        outline: none;
+        cursor: pointer;
+        padding-left: 16px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    #input {
+
+        background: white;
+        border: 1px solid #BBBBBB;
+        border-radius: 4px;
+        height: 48px;
+        width: 327px;
+        margin-bottom: 23px;
+        outline: none;
+        padding-left: 16px;
+        font-size: 16px;
+        font-weight: bold;
+
+    }
+
+    #botao {
+        background: #CDD728;
+        border-radius: 25px;
+        height: 48px;
+        width: 327px;
+        display: block;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        font-weight: bold;
+        font-size: 18px;
+        color: #f4f4f4;
+        margin-bottom: 23px;
+
+    }
+
+    #botao:active {
+        opacity: 0.6;
+    }
+
+    #caixa_interna {
+        border: 1px solid #9657A5;
+        border-radius: 4px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+
+    }
+
+    .caixa-interna {
+        text-align: center;
+
+    }
+
+    .seta {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .atualizado {
+        margin-top: 8px;
+        color: #000000;
+        font-size: 10px;
+
+    }
+
+
+    #Paragrafo_negrito {
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+
+
+<script src="./scripts.js"></script>
+
+</html>
