@@ -14,7 +14,7 @@ let bandeiras = document.getElementById('bandeiras')
 async function conversao() {
     //para usar await para aguarda vc tem que colocar async na função 
     //ele vai aguardar o retorno do site para proceguir 
-    let moedas = await fetch('http://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL').then(function (respota) {
+    let moedas = await fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL').then(function (respota) {
         return respota.json()
     })
 
