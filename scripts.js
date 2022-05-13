@@ -1,6 +1,7 @@
-
-let dolar = 5
-let euro = 6
+//#region parametros 
+let dolar = 1
+let euro = 1
+let bitcoin = 1
 let hora_consulta = document.getElementById('horaConsulta')
 let valor_unitario = document.getElementById('ValorUnitario')
 let dados_hora_consulta_euro = ''
@@ -9,19 +10,21 @@ let botao = document.getElementById('botao')
 let select_moedas = document.getElementById('selectMoedas')
 let texto_resultado = document.getElementById('textoResultado')
 let bandeiras = document.getElementById('bandeiras')
-
+//#endregion
 
 async function conversao() {
     //para usar await para aguarda vc tem que colocar async na função 
-    //ele vai aguardar o retorno do site para proceguir 
-    let moedas = await fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL').then(function (respota) {
+    //ele vai aguardar o retorno do site para prosseguir 
+    let moedas = await fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,BTC-BRL').then(function (respota) {
         return respota.json()
     })
 
     dolar = moedas.USDBRL.ask
     euro = moedas.EURBRL.ask
+    bitcoin = moedas.BTCBRL.ask
     dados_hora_consulta_dolar = moedas.EURBRL.create_date
     dados_hora_consulta_euro = moedas.USDBRL.create_date
+    dados_hora_consulta_biticoin = moedas.BTCBRL.create_date
 
     //calculos
     let valorReal = Number(document.getElementById('input').value)
@@ -34,8 +37,7 @@ async function conversao() {
         Valor_convertido.innerHTML = resultado.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
         Valor_digitado.innerHTML = valorReal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
         hora_consulta.innerHTML = 'Atualizado: ' + dados_hora_consulta_dolar
-        valor_unitario.innerHTML = 'Valor Unitário: ' + dolar
-
+        valor_unitario.innerHTML = 'Valor Unitário: ' + dolar.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
     }
 
     if (select_moedas.value === '€ Euro') {
@@ -43,9 +45,19 @@ async function conversao() {
         Valor_convertido.innerHTML = resultado.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' })
         Valor_digitado.innerHTML = valorReal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
         hora_consulta.innerHTML = 'Atualizado: ' + dados_hora_consulta_euro
-        valor_unitario.innerHTML = 'Valor Unitário: ' + euro
-
+        valor_unitario.innerHTML = 'Valor Unitário: ' + euro.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' })
     }
+
+
+    if (select_moedas.value === 'Bitcoin') {
+        let resultado = valorReal / bitcoin
+        Valor_convertido.innerHTML = resultado.toLocaleString('de-DE', { style: 'currency', currency: 'BTC', minimumFractionDigits: 8, })
+        Valor_digitado.innerHTML = valorReal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+        hora_consulta.innerHTML = 'Atualizado: ' + dados_hora_consulta_biticoin
+        valor_unitario.innerHTML = 'Valor Unitário: ' + bitcoin.toLocaleString('de-DE', { style: 'currency', currency: 'BTC', minimumFractionDigits: 8, })
+    }
+
+
 
 }
 
