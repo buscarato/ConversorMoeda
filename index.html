@@ -5,15 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/stylesheet.css" />
     <title> MS1 - Conversor de Moedas</title>
 </head>
 
 <body>
     <div id="cabecalho">
-        <h1> <img src="./img/money.png"> - Conversor De Moedas</h1>
+        <h1> <img src="./assets/img/money.png"> - Conversor De Moedas</h1>
     </div>
 
     <div id="caixa-principal">
@@ -36,15 +34,15 @@
 
         <div id="caixa_interna">
             <div class="caixa-interna">
-                <img src="./img/Brasil.png">
+                <img src="./assets/img/brasil.png">
                 <p class="Paragrafo">Real</p>
                 <p id="ValorDigitado" class="Paragrafo_negrito"> R$ 1.000,00</p>
             </div>
 
-            <img class="seta" id="seta" src="./img/Seta1.png">
+            <img class="seta" id="seta" src="./assets/img/seta.png">
 
             <div class="caixa-interna">
-                <img id='bandeiras' src="./img/EUA.png">
+                <img id='bandeiras' src="./assets/img/eua.png">
                 <p id="textoResultado" class="Paragrafo">Dolar Americano</p>
                 <p class="Paragrafo_negrito" id="ValorConvertido">$ 5.000,00</p>
             </div>
@@ -58,150 +56,7 @@
 
 </body>
 
-<style>
-    /* * vai ser colocado em todo o site, ele vai tirar espaço entre linhas, vai tirar magem e box-sizing não ficou muito 
-    claro exatamente o que ele faz */
-    * {
-        font-family: 'Roboto', sans-serif;
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
 
-    /*se vc setou id então vc usa o ponto (.) no incio para chamar no css
-    se não vc usar o (#) para class, a vantagem da classa q vc pode usar em mais de um lugar as mesma configurações 
-    */
-    .Paragrafo {
-        margin-bottom: 6px;
-        color: #777777;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 18px;
-
-
-    }
-
-
-    #cabecalho {
-        color: white;
-        width: 375px;
-        height: 66px;
-        background: rgb(109, 165, 68);
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 12px;
-
-    }
-
-    h1 {
-        color: #F4F4F4;
-        font-size: 24px;
-        text-align: center;
-        padding-top: 20px
-    }
-
-    body {
-        background: #2C2C2C
-    }
-
-
-    #caixa-principal {
-        background: #E5E5E5;
-        width: 375px;
-        padding: 24px;
-        margin-left: auto;
-        margin-right: auto;
-
-
-    }
-
-    .select {
-        background: white;
-        border: 1px solid #BBBBBB;
-        border-radius: 4px;
-        height: 48px;
-        width: 327px;
-        margin-bottom: 23px;
-        appearance: none;
-        outline: none;
-        cursor: pointer;
-        padding-left: 16px;
-        font-size: 16px;
-        font-weight: bold;
-        box-shadow: inset 0 0 1em rgb(156, 156, 158);
-    }
-
-    #input {
-
-        background: white;
-        border: 1px solid #BBBBBB;
-        border-radius: 4px;
-        height: 48px;
-        width: 327px;
-        margin-bottom: 23px;
-        outline: none;
-        padding-left: 16px;
-        font-size: 16px;
-        font-weight: bold;
-
-    }
-
-    #botao {
-        background: rgb(109, 165, 68);
-        border-radius: 25px;
-        height: 48px;
-        width: 327px;
-        display: block;
-        cursor: pointer;
-        border: none;
-        outline: none;
-        font-weight: bold;
-        font-size: 18px;
-        color: #f4f4f4;
-        margin-bottom: 23px;
-
-    }
-
-    #botao:active {
-        opacity: 0.6;
-    }
-
-    #caixa_interna {
-        border: 1px solid #9657A5;
-        border-radius: 4px;
-        padding-top: 12px;
-        padding-bottom: 12px;
-
-    }
-
-    .caixa-interna {
-        text-align: center;
-
-    }
-
-    .seta {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-
-    .atualizado {
-        margin-top: 8px;
-        color: #000000;
-        font-size: 10px;
-
-    }
-
-
-    #Paragrafo_negrito {
-        font-size: 20px;
-        font-weight: bold;
-    }
-</style>
-
-
-<script src="./scripts.js"></script>
+<script src="./assets/js/scripts.js"></script>
 
 </html>
